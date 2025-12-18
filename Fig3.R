@@ -5,6 +5,7 @@ library(ggtext)
 library(scales)
 library(tidyr)
 library(tibble)
+library(readxl)
 
 KO <- read_excel("Supplcompst.xlsx", sheet = "KO_table") %>%
   column_to_rownames(var = colnames(.)[1])
@@ -417,3 +418,4 @@ ggplot(comb, aes(x = dis, y = gtdb_genomesize, color = log2_Ec)) +
         legend.title = element_text(size = 20, face = "bold", color = "black", hjust=0),
         legend.text = element_text(size = 18, face = "bold", color = "black"),
         plot.title = element_text(size = 25, face = "bold",hjust = 0.5))
+
